@@ -1,0 +1,208 @@
+"""
+Guess Output Exercise
+
+Q1:-
+
+a = 5
+b = 10
+print(a < b < 20)
+# a<b and b<20
+# True and True
+# True
+
+
+Q2:-
+x = True
+y = False
+print(x + y * x)
+# 1 + 0 * 1
+# 1 + 0
+# 1
+
+
+Q3:-
+a = 12
+b = 5
+print(a ^ b)
+# ^ XOR (Bitwise Operator)
+# 12 =>  1100
+#  5 =>  0101
+#12^5=>  1001 => 9
+
+Q4:-
+print(4 ** 0 ** 2)
+# 4 to the power 0 to the power 2
+# it will work Left to Right
+# (4**0)**2
+# 1**2
+# 1
+
+
+Q5:-
+print((3 and 0) or (0 and 3))
+# (3 and 0) or (0 and 3)
+# 0 or 0
+# 0
+
+
+Q6:-
+print(256 is 256)   # True
+print(257 is 257)   # True
+
+Q7:-
+a = 7
+print(~a + 1)
+# ~ (bitwise not)  =>    -(x+1)
+# ~a + 1
+# -(7+1) + 1
+# -8 + 1
+# -7
+
+
+Q8:-
+a = True
+b = False
+print((a or b) and not (a and b))
+# (a or b) and not (a and b)
+# True and not False
+# True and True
+# True
+
+
+Q9:-
+print(10 > 5 == True)
+# 10 > 5 and 5 == True
+# True and 5==1
+# True and False
+# False
+
+
+Q10:-
+
+
+PEMDAS
+Paraenthesis ()
+Exponential **
+Multiplication * 
+Divide /
+Addition +
+Subtraction -
+Floor Division //
+Modulus %
+left Shift <<
+*=  assignment operator
+
+#   Left to Right
+print(2 + 3 * 4 ** 2 // 8 % 3)
+# 2 + 3*4**2//8%3
+# 2 + 3*16//8%3
+# 2 + 48//8%3
+# 2 + 6%3
+# 2 + 0
+# 2
+
+Q11:-
+print(1 << 2 + 1)
+# 1<<2+1
+# 1<<3
+# 8
+
+
+Q12:-
+
+a = 3
+b = 2
+a *= b + 1
+print(a)
+# a *= b + 1
+# a *= 3
+# a = a*3
+# 9
+
+
+Q13:-
+print(3 < 5 > 2 == 2)
+# 3<5 and 5>2 and 2==2
+# True and True and True
+# True
+
+
+Q14:-
+
+
+Operator	Meaning
+()	Parentheses
+**      Exponential
+*	Multiplication
+/	Division
+//	Floor Division
+%	Modulus
++, -	Addition/Subtraction
+*   /   //   %   same precedence solve left to right
+
+
+print(10 // 3 * 3 + 1 % 3)
+
+# 10//3*3+1%3
+# 3*3+1%3
+# 9 + 1
+# 10
+
+
+Q15:-
+
+x = 10
+y = 20
+print(x & y | x ^ y)
+# x = 01010
+# y = 10100
+#x&y= 00000
+#x^y= 11110
+# | = 11110 = 30
+
+Q16:- 
+
+# Left to right
+a = True
+b = False
+print(a & b or a ^ b)
+# True & False or True ^ False
+# False or True
+# True
+
+Q17:-
+x = 8
+print(x >> 1 << 2)
+# left to right
+# 8 >> 1 << 2
+# 4 << 2
+# 16
+
+Q18:-
+print(5 + True * False + (not False))
+# 5 + True * False + not False
+# There is an error 'not' can not be converted into numeric
+# 5 + True * False + (not False)
+# 5 + 1*0+1
+# 5 + 1
+# 6
+
+
+Q19:-
+print((not 0) * (False or 1))
+# (not 0) * (False or 1)
+# True * True
+# 1 * 1
+# 1
+
+
+Q20:-
+print(4 + 3 * 2 ** 2 // 2 - 1)
+# 4 + 3*2**2//2-1
+# 4 + 3*4//2-1
+# 4 + 12//2 - 1
+# 4 + 6 - 1
+# 9
+
+
+"""
