@@ -1,0 +1,189 @@
+"""
+Collection:- A collection is a set of elements
+a = 10  (a variable can hold a single value at a time)
+Sequence Data Type
+    List , Tuple
+Hash Data Type
+    Set , Dictionary
+
+LIST:- A list is a collection of hetreogenous(different data type) elements
+Syntax:-
+list_name = [12,3,45,67,841,35]
+
+
+Ways to Create A List
+li = [23,4,56,78,9]
+li = [23,'A',34.67,'Aman',True,3+7j]
+li = []
+li = list([23,45,67,89,23])
+li = list((23,45,67,89,23))
+li = list()
+print( li )
+print( type(li) )
+
+List works index
+Backward Index  (-1,-2,-3,-4..)
+Forward  Index  (0,1,2,3,4,5..)
+    list_name[index]
+
+li = [23,45,67,8,867,45,43]
+print(li)
+print(li[3])
+print(li[-3])
+
+List can be Sliced
+    list_name[start_index:stop_index:step_index]
+
+li = [23,45,67,8,867,45,43]
+print(li)
+print(li[3:6:1])
+print(li[-6:-3])  # by deafault step = 1
+print(li[2:6:2])
+print(li[-2:-6:-1])
+
+
+List can be Replicate
+
+li = [1,2,3,4,5]
+print(li)
+print(li*3)  # it will repeat all elements for 3 times
+
+
+List can be Traverse
+
+li = [23,67,36,47,16,52]
+print(li)
+for a in li:
+    print(a)
+
+
+Built-in Functions
+    sum , max , min , len
+
+li = [32,56,78,74,36,2,32]
+print(li)
+print(sum(li))
+print(max(li))
+print(min(li))
+print(len(li))
+print(sum(li)/len(li))
+
+
+List's Methods
+     append , insert , extend
+
+li = [32,56,78,74,36,2,32]
+print(li)
+li.append(99)
+print(li)
+li.insert(2,88)
+print(li)
+li2 = [11,22,33]
+li.extend(li2)
+print(li)
+
+
+    pop , remove , clear , del (keyword)
+
+li = [32,56,78,74,36,2,99]
+print(li)
+li.pop()  #  it will delete the last element
+print(li)
+li.pop(2) #  it will delete element of index 2
+print(li)
+li.remove(36)  # remove element/value 36
+print(li)
+del li[1] # del is a keyword
+print(li)
+li.clear()
+print(li)
+
+
+    reverse , sort
+
+li = [78,5,47,35,82,47,45,74]
+print(li)
+li.reverse()
+print(li)
+li.sort()
+print(li)
+li.reverse()
+print(li)
+li.sort(reverse=True)
+print(li)
+
+
+        index , count
+
+li = [2,3,4,6,5,4,4,2,3,4,6,7,65,3,2,3,5,6,543,3,4,4]
+print(li)
+print( li.count(4) )
+print( li.index(65) )
+print( li.index(4) )
+print( li.index(4,10) )
+
+
+Tuple
+Tuple is also a collection of hetreogenous elements
+tuple_name = (243,455,6,7)
+
+t = (3,34,45,56,67,24,8)
+t = (234,'Aman',34.56,True)
+t = ()
+t = tuple()
+t = tuple([32,43,56,78])
+t = tuple((32,43,56,78))
+print( t )
+print( type(t) )
+
+
+Tuple works on index
+    backward , forward
+        tuple_name[index]
+
+t = (3,34,45,56,67,24,8)
+print(t)
+print( t[3] )
+print( t[-3] )
+
+
+Tuple can be sliced
+t = (3,34,45,56,67,24,8)
+print(t)
+print(t[3:6])
+
+
+Tuple can be Replicate
+t = (3,34,45,56,67,24,8)
+print(t)
+print(t*3)  # it will repeat all elements for 3 times
+
+
+Tuple can be Traverse
+t = (3,34,45,56,67,24,8)
+print(t)
+for a in t:
+    print(a)
+
+
+Built-in functions
+    sum , max , min , len
+
+t = (3,34,45,56,67,24,8)
+print(t)
+print(sum(t))
+print(max(t))
+print(min(t))
+print(len(t))
+
+
+        index, count
+t = (3,34,3,45,3,56,3,24,3,8)
+print(t)
+print( t.count(3) )  
+print( t.index(45) )
+
+Tuple is immuteable (you can not change anything in the tuple)
+Tuple is faster than the list due to its immuteablity
+
+"""
