@@ -1,0 +1,160 @@
+"""
+Hash Data Type
+    SET , Dictionary
+SET
+Set is also a collection of unique hetregenous elements
+Syntax:-
+s = {23,45,84,43,37,86}
+
+[] List , () Tuple , {} Set
+
+
+s = {23,49,685,43,2,3,4356,7}
+s = {234,456.234,'Aman',3+7j,True}
+s = {}
+s = set()
+s = set({23,45,67,89})
+s = set([23,45,67,89])
+s = set((23,45,67,89))
+print(s)
+print(type(s))
+
+
+# it will remove all the duplicate elements from the set using hash
+s = {1,2,4,4,3,3,2,3,4,3,2,2,3,4,3,3,4,3}
+print(s)
+
+
+# it will remove all the duplicate elements from the set using hash
+s = {23,56,84,13,84,46,85}
+print(s)
+
+
+SET has no INDEX
+SET can not be sliced
+SET can not be Replicate
+But Set can be traverse
+
+
+s = {23,56,84,13,84,46,85}
+print(s)
+for a in s:
+    print(a)
+
+
+Built-in Functions
+    sum , max , min , len
+
+
+s = {23,56,84,13,84,46,85}
+print(s)
+print(sum(s))
+print(max(s))
+print(min(s))
+print(len(s))
+
+
+SET's Method
+    add , pop , remove , clear , discard
+
+s = {23,54,67,89,87,654,32,21,43}
+print(s)
+s.add(999)  # add on a random position
+print(s)
+s.pop()     # remove a random value
+print(s)
+s.remove(654)
+print(s)
+# s.remove(111)  # raise an error because 111 is not available
+s.discard(21)
+print(s)
+s.discard(111)   # will not raise any error
+print(s)
+s.clear()
+print(s)
+
+
+SET's Methods
+    intersection , union , difference , symmetric_difference
+
+s1 = {1,2,3,4,5,6}
+s2 = {4,5,6,7,8,9}
+print(s1.intersection(s2))  # common elements
+print(s1.union(s2))  # print all elements from both 2 sets (remove duplicate)
+print(s1.difference(s2))  # remove all elements from s1 which are common
+print(s1.symmetric_difference(s2)) # print all excepts common
+
+
+SET's Operations
+    & , | , ^ , - 
+
+s1 = {1,2,3,4,5,6}
+s2 = {4,5,6,7,8,9}
+print(s1&s2)  # intersection
+print(s1|s2)  # union
+print(s1-s2)  # difference
+print(s1^s2)  # Symmytric_difference
+
+
+Dictionary:- Dictionary is a collection of key:value pairs which is called
+items.
+
+d = {1:233,2:467,5:123,'A':678,'Aman':366,90:755}
+print(d)
+print( d[5] )
+print( d['Aman'] )
+
+
+Dictionary has no INDEX
+Dictionary can not be Sliced
+Dictionary can not hold duplicate keys
+Dictionary can hold duplicate values
+Dictionary can not be Replicate
+But, Dictionary can be Traverse
+
+d = {1:3445,3:4566,5:4567,6:4566,7:5677}
+print(d)
+d = {1:3445,3:4566,5:4567,6:4566,5:9999}
+print(d)
+
+
+d = {1:3445,3:4566,5:4567,6:4566,7:5677}
+for k in d:   # by default it will iterate keys
+    print(k)
+
+Dictionary's Methods
+    keys , values , items
+
+d = {1:3445,3:4566,5:4567,6:4566,7:5677}
+for k in d.keys():
+    print(k)
+
+d = {1:3445,3:4566,5:4567,6:4566,7:5677}
+for k in d.values():
+    print(k)
+
+
+d = {1:3445,3:4566,5:4567,6:4566,7:5677}
+for k in d.items():
+    print(k)
+
+
+d = {1:3445,3:4566,5:4567,6:4566,7:5677}
+for k,v in d.items():
+    print(k , v)
+
+
+    update , get , pop
+
+d = {1:3445,3:4566,5:4567,6:4566,7:5677}
+print(d)
+d.pop(5)
+print(d)
+d2 = {8:9999,9:6666,3:7777}
+d.update(d2)
+print(d)
+print( d[8] )
+print( d.get(9) )
+print( d.get(5,"Not Available") )
+
+"""
