@@ -1,0 +1,132 @@
+"""
+UDF:- User Define Functions
+Function is a block statements that will perform a specific task and
+return a value
+
+Syntax:-
+def function_name(parameters):
+    definition
+
+function_name(arguments)
+
+Example:-
+def greet():
+    print("Good Morning!")
+
+greet()
+greet()
+
+
+def greet(value):
+    print("Good",value)
+
+greet("Morning")
+greet("Noon")
+greet("After Noon")
+greet("Evening")
+
+
+def add(a,b):
+    print(a+b)
+
+add(23,45)
+add(34,67)
+
+
+def add(a,b):
+    return a+b
+print( add(23,45) )
+
+
+
+def add(a,b,c):
+    return a+b+c
+
+print( add(23,45,35) )
+
+
+# default arguments
+def add(a,b=0,c=0):
+    return a+b+c
+
+print( add(23,34) )
+
+
+def add(a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,i=0):
+    return a+b+c+d+e+f+g+h+i
+
+print( add() )
+print( add(34) )
+print( add(34,67) )
+print( add(34,67,78) )
+print( add(654,456,567,234,567) )
+
+
+def add(*a):   # *a => tuple
+    return sum(a)
+
+print( add() )
+print( add(23,56) )
+print( add(54,73,35,41,68) )
+print( add(23,78,35,33,47,31,36,68) )
+
+
+
+def add(*a):
+    print( type(a) )
+    return sum(a)
+
+print( add(23,56) )
+
+
+
+def add(**a):    #  **a  => dictionary  {key:value}
+    return a
+
+print( add(name='Rahul Kumar' , salary=23732) )
+
+
+
+def add(**a):
+    print( type(a) )
+    return a
+
+print( add(name='Rahul Kumar' , salary=23732) )
+
+
+# Recursion
+Recursion is a property of a function where a function call itself
+
+def greet():
+    print("Hello")
+    greet()
+
+greet()
+
+
+# WAP to add all natural number using recursion
+
+def add(num):
+    if num==1:
+        return 1
+    else:
+        return num + add(num-1)    
+
+
+print( add(100) ) 
+print( add(50) )
+
+
+# WAP to calculate the factorial of a number
+
+def add(num):
+    if num==1:
+        return 1
+    else:
+        return num * add(num-1)    
+
+print( add(5) )
+print( add(6) )
+print( add(7) )
+
+"""
