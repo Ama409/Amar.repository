@@ -1,0 +1,174 @@
+"""
+break , continue , pass
+
+# break: break will exit the current loop
+for i in range(1,8):  
+    if i==4:
+        break
+    print(i)
+
+
+# break: break will exit the current loop
+for i in range(1,8): 
+    print(i)
+    if i==4:
+        break
+
+
+# Continue:- continue will take the cursor to the next itteration
+# Continue will not run the code after the continue statement, it will
+# go to the loop back (skip the upcoming code)
+for i in range(1,8):   
+    if i==4:
+        continue
+    print(i)
+
+
+
+# Continue:- continue will take the cursor to the next itteration
+# Continue will not run the code after the continue statement, it will
+# go to the loop back (skip the upcoming code)
+for i in range(1,8):
+    print(i)
+    if i==4:
+        continue
+
+
+for i in range(1,11):
+    if i%3==0:
+        continue
+    print(i)
+
+
+# pass:- pass do nothing
+# pass:- just pass the cursor to the next line
+for i in range(1,11):
+    if i%3==0:
+        pass
+    print(i)
+
+
+
+if 10>5: 
+    pass    # it fullfill the identated requirement
+
+print("Hello")
+
+
+ELSE
+
+for i in range(1,6):
+    print(i)
+else:
+    print(0)
+
+
+else will not work if the loop will break
+for i in range(1,6):
+    if i==4:
+        break
+    print(i)
+else:
+    print(0)
+
+
+for i in range(1,6):
+    if i==4:
+        continue
+    print(i)
+else:
+    print(0)
+
+
+# check A Number is Prime
+num = 18
+count = 0
+for i in range(1,num+1):
+    if num%i==0:
+        count+=1
+if count==2:
+    print("Prime")
+else:
+    print("Not Prime")
+
+    
+
+Nested for loop
+loop inside a loop
+
+# WAP to find all the prime numbers from 1 to 100
+for num in range(1,101):
+    count = 0
+    for i in range(1,num+1):
+        if num%i==0:
+            count+=1
+    if count==2:
+        print(num)
+
+
+# Pattern Programming
+
+*****
+*****
+*****
+*****
+*****
+
+
+print("*****")
+print("*****")
+print("*****")
+print("*****")
+print("*****")
+
+print("*****\n*****\n*****\n*****\n*****")
+
+for i in range(5):
+    print("*****")
+
+
+*****
+*****
+*****
+*****
+*****
+
+
+for i in range(1,6):     # rows   
+    for j in range(1,6):      # columns  
+        print("*",end='')
+    print()
+
+
+for i in range(1,15):        
+    for j in range(1,26):       
+        print("*",end='')
+    print()
+
+
+
+*
+**
+***
+****
+*****
+
+for i in range(1,6): 
+    for j in range(1,i+1):
+        print("*",end="")
+    print()
+
+
+for i in range(1,21): 
+    for j in range(1,i+1):
+        print("*",end="")
+    print()
+
+
+
+for i in range(1,21): 
+    for j in range(1,i+1):
+        print("*",end="")
+    print()
+
+"""
