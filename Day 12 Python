@@ -1,0 +1,112 @@
+"""
+String:- String is a collection of characters and it behaves like a tuple
+Like tuple, String is immuteable.
+Syntax:-
+st = "28736ubdbjhdbnwpodjh)_(T&%RIUnkldniuf"
+
+st = "dgoiIKVOI2765*&^%djbcNBI"
+st = "aman"
+st = "AMAN"
+st = 'amankumar'
+st = '''aman singh'''
+st = str()  # blank string
+st = str(275)
+print(st)
+print(type(st))
+
+String works on INDEX
+backward(-1,-2,-3...) and forward(0,1,2,3...)
+string_name[index]
+
+
+st = "AMANKUMAR"
+print(st)
+print(st[3])
+print(st[-5])
+
+
+String can be Sliced
+    string_name[start_index:stop_index:step_index]
+
+st = "AMANKUMAR"
+print(st)
+print(st[2:7])
+print(st[-7:-2])
+
+
+String can be Replicate
+st = "Ha"
+print(st*3)
+
+
+String can be Traverse
+
+st = "AMANKUMAR"
+print(st)
+for ch in st:
+    print(ch)
+
+
+String can be processed by Built-in Functions
+    sum , max , min , len
+
+A = 65 , B = 66 , C = 67 ---- Z = 90
+a = 97 , b = 98 , c = 99 ---- z = 122
+
+st = "AmanKumar"
+print(max(st))   # u
+print(min(st))   # A
+print(len(st))   # 9
+
+
+String's Methods
+    upper , lower , capitalize , title
+
+a = "AMaN KuMar"
+print( a )
+print( a.upper() )
+print( a.lower() )
+print( a.capitalize() )
+print( a.title() )
+
+
+    replace , strip  , lstrip , rstrip , split , join
+
+st = "I love Python Language"
+print(st)
+print( st.replace("Python",'Java') )
+st = "    aman      "
+print(st)
+print(st.lstrip())
+print(st.rstrip())
+print(st.strip())  # remove overspaces
+st = "My younger brother is a computer scientist"
+print(st)
+li = st.split()
+print(li)
+print( "$".join(li) )
+print( " ".join(li) )
+st = "PYTHON"
+print("@".join(st))
+
+    
+    isdigit , isalpha , isalnum
+
+st = "aman"
+print( st.isdigit() )
+print( st.isalpha() )
+print( st.isalnum() )
+st = "123"
+print( st.isdigit() )
+print( st.isalpha() )
+print( st.isalnum() )
+st = "aman123"
+print( st.isdigit() )
+print( st.isalpha() )
+print( st.isalnum() )
+st = "aman123@gmail.com"
+print( st.isdigit() )
+print( st.isalpha() )
+print( st.isalnum() )
+
+"""
