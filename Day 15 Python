@@ -1,0 +1,154 @@
+"""
+
+def cube(num):
+    return num**3
+
+print( cube(4) )
+print( cube(7) )
+
+
+Advance Python
+    lambda Expression , map , filter , reduce
+
+lambda expression:- it is use to write small size and one or two instruction's
+functions
+
+function_name = lambda parameter : definition
+cube = lambda num:num**3
+
+print( cube(4) )
+print( cube(7) )
+
+---------------------------------------------------
+def checkEven(num):
+    if num%2==0:
+        return 'Even'
+    else:
+        return 'Odd'
+    
+print( checkEven(17) )
+print( checkEven(12) )
+---------------------------------------------------
+checkEven = lambda num : 'Even' if num%2==0 else 'Odd'
+    
+print( checkEven(17) )
+print( checkEven(12) )
+---------------------------------------------------
+
+def square(num):
+    return num**2
+
+print( square(4) )
+print( square(16) )
+
+---------------------------------------------------
+square = lambda num:num**2
+
+print( square(4) )
+print( square(16) )
+---------------------------------------------------
+
+def add(a,b):
+    return a+b
+
+print( add(23,56) )
+print( add(3456,5675) )
+
+---------------------------------------------------
+
+add = lambda a,b:a+b
+
+print( add(23,56) )
+print( add(3456,5675) )
+
+---------------------------------------------------
+
+cube = lambda num:num**3
+li = [1,2,3,4,5,6,7,8,9,10]
+for x in li:
+    print( cube(x) )
+
+MAP
+Map says if you want to apply a function on every element of a collection
+so, map can do it for you
+just reference the function and collection, it will apply function on
+every element of the collection without itteration
+
+
+cube = lambda num:num**3
+li = [1,2,3,4,5,6,7,8,9,10]
+res = list( map( cube , li ) )
+print( res )
+
+---------------------------------------------------------------
+
+removePoint = lambda num : int(num)
+li = [23.56,57.5,57.69,23.67,8.54,13.76,79.54,31.57]
+for x in li:
+    print( removePoint(x) )
+
+
+removePoint = lambda num : int(num)
+li = [23.56,57.5,57.69,23.67,8.54,13.76,79.54,31.57]
+res = tuple( map( removePoint , li ) )
+print( res )
+
+
+-------------------------------------------------------------
+
+checkEven = lambda num : num%2==0
+li = [2,34,45,56,789,87,65,43,323,67,5,32,456]
+print(li)
+for x in li:
+    if checkEven(x):
+        print(x)
+
+
+Filter:- it is use to filter out some elements from a collection,
+reference it with a function which return boolean and a collection
+without itteration
+
+checkEven = lambda num : num%2==0
+li = [2,34,45,56,789,87,65,43,323,67,5,32,456]
+res = list( filter( checkEven , li ) )
+print(res)
+
+---------------------------------------------------------------------
+
+add = lambda a,b:a+b
+li = [1,2,3,4,5,6,7,8,9,10]
+res = 0
+for x in li:
+    res = add(res,x)
+print(res)
+
+reduce :- it is use to reduce your entire collection into a single value
+without itteration
+
+from functools import reduce
+add = lambda a,b:a+b
+li = [1,2,3,4,5,6,7,8,9,10]
+res = reduce(add , li)
+print(res)
+
+
+from functools import reduce
+fact = lambda a,b:a*b
+li = [1,2,3,4,5,6,7]
+res = reduce(fact , li)
+print(res)
+
+
+# WAP to add all cubes of even numbers of a collection
+
+from functools import reduce
+checkEven = lambda val:val%2==0
+cube = lambda val:val**3
+add = lambda a,b:a+b
+li = [1,2,3,4,5,6,7,8,9,10]
+li = filter( checkEven , li )
+li = map(cube , li)
+res = reduce( add,li )
+print(res)
+
+"""
