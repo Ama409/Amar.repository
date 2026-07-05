@@ -1,0 +1,50 @@
+"""
+File Handling System
+Binary File (.bin , .dat etc)
+
+file_handler = open('file_name.extension' , 'mode')
+mode:-     rb , wb , ab , rb+ , wb+ , ab+
+
+Example:-
+
+file = open('employee.bin','wb')
+file.close()
+
+You need a built-in library to read or write data in your file
+        pickle , joblib
+
+        library_name.dump( 'data' , file_handler )
+        library_name.load( file_handler )
+
+
+import pickle
+file = open('employee.bin','wb')
+pickle.dump('Mohan Yadav',file)
+file.close()
+
+
+import pickle
+file = open('employee.bin','ab')
+pickle.dump('Yogesh Kumar',file)
+file.close()
+
+
+import pickle
+file = open('employee.bin','rb')
+for i in range(4):
+    data = pickle.load(file)
+    print(data)
+file.close()
+
+
+import pickle
+file = open('employee.bin','rb')
+try:
+    while True:
+        data = pickle.load(file)
+        print(data)
+except:
+    print("\nData Read Successfully!")
+file.close()
+
+"""
