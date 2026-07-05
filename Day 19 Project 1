@@ -1,0 +1,83 @@
+"""
+STORE MANAGEMENT SYSTEM
+Customer (cid , cname , cadd , cmob)
+Product  (pid , pname , price , pdesc)
+Orders   (cid , pid , qty)
+
+1. Add Customer
+2. View Customers
+3. Delete Customer
+4. Add Product
+5. View Products
+6. Update Product Price
+7. Place An Order
+8. View All Orders
+9. View Orders By CID
+0. Exit
+
+"""
+# IMPORTING REQUIRED LIBRARIES
+import pickle
+
+# A METHOD TO GET ALL CUSTOMER's INFORMATION
+def getCustomer():
+    file = open("customer.bin","rb")
+    cus = dict()
+    try:
+        while True:
+            cus.update(pickle.load(file))
+    except:
+        pass
+    file.close()
+    return cus
+
+# A METHOD TO ADD A CUSTOMER INFORMATION
+def addCustomer():
+    cid = input("\n\t\tEnter New Customer ID : ")
+    if not getCustomer().get(cid,False):
+        cname = input("\t\tEnter Customer Name : ")
+        cadd = input("\t\tEnter Customer Address : ")
+        cmob = input("\t\tEnter Customer Mobile Number : ")
+        file = open("customer.bin" , "ab")
+        data = {cid:[cname,cadd,cmob]}
+        pickle.dump(data,file)
+        file.close()
+        print("\t\tCustomer Addedd Successfully!")
+    else:
+        print("\n\t\tThis ID is Already Exist!")
+
+# A METHOD TO VIEW ALL CUSTOMER's INFORMATION
+def viewCustomer():
+    cus = getCustomer()
+    for cid,info in cus.items():
+        print("\n\t\tCustomer ID :",cid)
+        print("\t\tCustomer Name :",info[0])
+        print("\t\tCustomer Address :",info[1])
+        print("\t\tCustomer Mobile Number :",info[2])
+        print("\t\t-------------------------------------------")
+
+# DASHBOARD
+while True:
+    print("\n\t\tSTORE MANAGEMENT SYSTEM")
+    print('''
+                1. Add Customer
+                2. View Customers
+                3. Delete Customer
+                4. Add Product
+                5. View Products
+                6. Update Product Price
+                7. Place An Order
+                8. View All Orders
+                9. View Orders By CID
+                0. Exit
+    ''')
+    ch = int(input("\t\tEnter Your Choice : "))
+    if ch==0:
+        print("\n\t\tBye-Bye Admin!")
+        break
+    elif ch==1:
+        addCustomer()
+        input("\n\t\tPress Enter To Continue...")
+    elif ch==2:
+        viewCustomer()
+        input("\n\t\tPress Enter To Continue...")
