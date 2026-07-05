@@ -1,0 +1,130 @@
+"""
+Topic : Exception Handling
+
+Error:- A mistake in your code
+Type of Error
+1- Syntax Error
+print("Hello')
+a = 10
+print("Value of"a)
+
+An error in your code which is flaged by interpreted and will not let you
+run the code is called SyntaxError.
+You need to find the mistake and fix it if you want to run the code,
+because you can not by pass or ignore it.
+
+2- Runtime Error
+A runtime error can not flaged by interpreter and the code will execute but
+it can raise an error at run time and it can crash the program.
+
+a = int(input("Enter A Number : "))
+b = int(input("Enter B Number : "))
+print("Division :",a/b)
+print("Program Completed!")
+
+this is a runtime error and this error can be handled or can be by pass or
+ignore this error is also called the Exception.
+
+3- Symmtric Error
+This error can not flag by interpreter and can not raise any error at runtime
+but it will not generate a desired output.
+
+a = int(input("Enter A Number : "))
+b = int(input("Enter B Number : "))
+print("Addition :",a*b)  # it should be + sign
+print("Program Completed!")
+
+This type or error are called bugs and you need to find it and fix it.
+
+Exception Handling:-
+    try , except , finally
+
+Syntax:-
+try will not work alone we need to put except or finally block
+
+try:
+    write your doubtful code here
+except:
+    alternative code (if any error)
+
+
+a = int(input("Enter A Number : "))
+b = int(input("Enter B Number : "))
+try:
+    print("Division :",a/b)
+except:
+    print("Division is not Possible")
+print("Program Completed!")
+
+
+
+
+a = int(input("Enter A Number : "))
+b = int(input("Enter B Number : "))
+try:
+    print("Division :",a/b)
+except ZeroDivisionError as e:
+    print("Error :",e)
+print("Program Completed!")
+
+
+
+Nested Except
+
+try:
+    a = int(input("Enter A Number : "))
+    b = int(input("Enter B Number : "))
+    print("Division :",a/b)
+except ZeroDivisionError as e:
+    print("Error :",e)
+except ValueError as e:
+    print("Error :",e)
+print("Program Completed!")
+
+
+try:
+    a = int(input("Enter A Number : "))
+    b = int(input("Enter B Number : "))
+    print("Division :",a/b)
+except Exception as e:
+    print("Error :",e)
+print("Program Completed!")
+
+
+
+try:
+    a = int(input("Enter A Number : "))
+    b = int(input("Enter B Number : "))
+    print("Division :",a/b)
+except Exception as e:
+    print("Error :",e)
+finally:
+    print("It will execute always")
+print("Program Completed!")
+
+
+try:
+    doubtful code
+except:
+    alternate code (if any error)
+else:
+    successful code (if there is no error)
+finally:
+    it will execute always
+
+
+try:
+    a = int(input("Enter A Number : "))
+    b = int(input("Enter B Number : "))
+    print("Division :",a/b)
+except Exception as e:
+    print("Error :",e)
+else:
+    print("Division Completed!")
+finally:
+    print("It will execute always")
+print("Program Completed!")
+
+
+"""
+ 
