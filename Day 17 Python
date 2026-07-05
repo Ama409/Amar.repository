@@ -1,0 +1,111 @@
+"""
+File Handling:- Reading and writing data into files
+Types of files
+1- Text File
+2- Binary File
+Text File (.txt  , .xlsx  , .docx , .csv etc (store data characters by characters))
+Binary File (.bin , .dat etc (stores data in object form))
+
+
+Text File
+file_handler = open( 'filename.extension' , 'mode' )
+mode :-   r , w , a , r+ , w+ , a+
+
+
+Example:-
+# in 'w' mode, if file exists it will open otherwise it will created by this mode and open it
+file = open('student.txt','w')
+file.close()
+
+
+# write method is use to write a string in a file
+# you can write a string only for numerical you need to convert your data into string
+file = open('student.txt','w')
+file.write("Tarun Verma")
+file.close()
+# in 'w' mode it will erase old data and write new data
+
+
+file = open('student.txt','a')
+file.write("\nMahesh Singh")
+file.close()
+# in 'a' mode it will add new data with old dataset
+
+
+# using 'writelines' method you can write multiple data at a time in a file
+li = ['\nYogesh Kumar','\nAman Saini','\nVishal Yadav']
+file = open('student.txt','a')
+file.writelines(li)
+file.close()
+
+
+#if your file exists it will open and if file does not exists it will raise an error
+file = open('student.txt','rb')
+data = file.read()  # it will read all the data
+print(data)
+file.close()
+
+
+# if your file exists it will open and if file does not exists it will raise an error
+file = open('student.txt','rb')
+data = file.read(20)   # it will 20 charaters
+print(data)
+file.close()
+
+
+# if your file exists it will open and if file does not exists it will raise an error
+file = open('student.txt','rb')
+data = file.readline()  # it will read only 1 line
+print(data)
+data = file.readline()
+print(data)
+file.close()
+
+
+file = open('student.txt','rb')
+for i in range(7):    # read 7 lines
+    data = file.readline() 
+    print(data)   
+file.close()
+
+
+
+file = open('student.txt','rb')
+while True:    # write all lines one by one
+    data = file.readline()
+    if len(data)==0:
+        break
+    print(data)
+file.close()
+
+
+file = open('student.txt','rb')
+data = file.readlines()   # read all lines and append them into a list
+print(data)
+file.close()
+
+
+file = open('student.txt','rb')
+data = file.readlines()   # read all lines and append them into a list
+for line in data:
+    print(line)
+file.close()
+
+
+file = open('student.txt' , 'rb')
+print( file.tell() )  # it will tell you the current position of the cursor file
+print( file.read(20) )
+print( file.tell() )
+file.close()
+
+
+file = open('student.txt' , 'rb')
+print( file.tell() )  # it will tell you the current position of the cursor file
+file.seek(20)  # it will take cursor to the next 20th position
+print( file.tell() )
+print( file.read(10) )
+print( file.tell() )
+file.close()
+
+
+"""
