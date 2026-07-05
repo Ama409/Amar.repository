@@ -1,0 +1,176 @@
+"""
+STORE MANAGEMENT SYSTEM
+Customer (cid , cname , cadd , cmob)
+Product  (pid , pname , price , pdesc)
+Orders   (cid , pid , qty)
+
+1. Add Customer
+2. View Customers
+3. Delete Customer
+4. Add Product
+5. View Products
+6. Update Product Price
+7. Place An Order
+8. View All Orders
+9. View Orders By CID
+0. Exit
+
+"""
+# IMPORTING REQUIRED LIBRARIES
+import pickle
+
+# A METHOD TO GET ALL CUSTOMER's INFORMATION
+def getCustomer():
+    file = open("customer.bin","rb")
+    cus = dict()
+    try:
+        while True:
+            cus.update(pickle.load(file))
+    except:
+        pass
+    file.close()
+    return cus
+
+# A METHOD TO GET ALL PRODUCT's INFORMATION
+def getProduct():
+    file = open("product.bin","rb")
+    pro = dict()
+    try:
+        while True:
+            pro.update(pickle.load(file))
+    except:
+        pass
+    file.close()
+    return pro
+
+
+def updateCustomer(cus):
+    file = open('customer.bin','wb')
+    for cid,data in cus.items():
+        pickle.dump({cid:data},file)
+    file.close()
+
+def updateProduct(pro):
+    file = open('product.bin','wb')
+    for pid,data in pro.items():
+        pickle.dump({pid:data},file)
+    file.close()
+
+
+# A METHOD TO ADD A CUSTOMER INFORMATION
+def addCustomer():
+    cid = input("\n\t\tEnter New Customer ID : ")
+    file = open("customer.bin" , "ab")
+    if not getCustomer().get(cid,False):
+        cname = input("\t\tEnter Customer Name : ")
+        cadd = input("\t\tEnter Customer Address : ")
+        cmob = input("\t\tEnter Customer Mobile Number : ")
+        data = {cid:[cname,cadd,cmob]}
+        pickle.dump(data,file)
+        print("\t\tCustomer Addedd Successfully!")
+    else:
+        print("\n\t\tThis ID is Already Exist!")
+    file.close()
+
+# A METHOD TO VIEW ALL CUSTOMER's INFORMATION
+def viewCustomer():
+    cus = getCustomer()
+    for cid,info in cus.items():
+        print("\n\t\tCustomer ID :",cid)
+        print("\t\tCustomer Name :",info[0])
+        print("\t\tCustomer Address :",info[1])
+        print("\t\tCustomer Mobile Number :",info[2])
+        print("\t\t-------------------------------------------")
+
+# A METHOD TO DELETE A CUSTOMER DETAIL
+def deleteCustomer():
+    cid = input("\n\t\tEnter Customer ID To Delete : ")
+    cus = getCustomer()
+    if cus.get(cid , False):
+        customer = cus.get(cid)
+        print("\n\t\tCustomer Name :",customer[0])
+        print("\t\tCustomer Address :",customer[1])
+        cus.pop(cid)
+        updateCustomer(cus)
+        print("\n\t\tCustomer Deleted Successfully!")
+    else:
+        print("\n\t\tCustomer Not Found on This ID")
+
+# A METHOD TO ADD A PRODUCT INFORMATION
+def addProduct():
+    pid = input("\n\t\tEnter New Product ID : ")
+    file = open("product.bin" , "ab")
+    if not getProduct().get(pid,False):
+        pname = input("\t\tEnter Product Name : ")
+        price = input("\t\tEnter Product Price : ")
+        desc = input("\t\tAbout The Product : ")
+        data = {pid:[pname,price,desc]}
+        pickle.dump(data,file)
+        print("\t\tProduct Addedd Successfully!")
+    else:
+        print("\n\t\tThis Product ID is Already Exist!")
+    file.close()
+
+# A METHOD TO VIEW ALL PRODUCT
+def viewProduct():
+    pro = getProduct()
+    for pid,info in pro.items():
+        print("\n\t\tProduct ID :",pid)
+        print("\t\tProduct Name :",info[0])
+        print("\t\tProduct Price :",info[1])
+        print("\t\tProduct Information :",info[2])
+        print("\t\t-------------------------------------------")
+
+# A METHOD TO UPDATE PRODUCT's PRICE
+def updatePrice():
+    pro = getProduct()
+    pid = input("\n\t\tEnter Product ID To Update Price : ")
+    if pro.get(pid,False):
+        data = pro.get(pid)
+        print("\t\tProduct Name :",data[0])
+        print("\t\tProduct Price :",data[1])
+        price = input("\t\tEnter New Price : ")
+        data[1] = price
+        pro.update({pid:data})
+        updateProduct(pro)
+        print("\n\t\tPrice Updated Successfully!")
+    else:
+        print("\n\t\tProduct ID Not Found!")
+
+# DASHBOARD
+while True:
+    print("\n\t\tSTORE MANAGEMENT SYSTEM")
+    print('''
+                1. Add Customer
+                2. View Customers
+                3. Delete Customer
+                4. Add Product
+                5. View Products
+                6. Update Product Price
+                7. Place An Order
+                8. View All Orders
+                9. View Orders By CID
+                0. Exit
+    ''')
+    ch = int(input("\t\tEnter Your Choice : "))
+    if ch==0:
+        print("\n\t\tBye-Bye Admin!")
+        break
+    elif ch==1:
+        addCustomer()
+        input("\n\t\tPress Enter To Continue...")
+    elif ch==2:
+        viewCustomer()
+        input("\n\t\tPress Enter To Continue...")
+    elif ch==3:
+        deleteCustomer()
+        input("\n\t\tPress Enter To Continue...")
+    elif ch==4:
+        addProduct()
+        input("\n\t\tPress Enter To Continue...")
+    elif ch==5:
+        viewProduct()
+        input("\n\t\tPress Enter To Continue...")
+    elif ch==6:
+        updatePrice()
+        input("\n\t\tPress Enter To Continue...")
